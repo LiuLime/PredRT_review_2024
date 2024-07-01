@@ -1,0 +1,127 @@
+{
+  "path": "../01_raw_data/",
+  "db": [
+    "01_SMRT",
+    "02_Massbank_JP_202311",
+    "03_Massbank_EU",
+    "04_PredRet"
+  ],
+  "file": [
+    "SMRT_dataset.csv",
+    "MassBank-data-2023.11",
+    "MoNA-export-Experimental_Spectra.json",
+    ""
+  ],
+  "save_path_for_02": "./collate_data/",
+
+  "classyfire_file": "../crawler/classyfire.json",
+  "pubchem_file": "../crawler/pubchem.json",
+  "name_file": "../crawler/nameNIHinchi.json",
+  "classyfire@path": "",
+  "classyfire@query_column": "C@inchikey",
+  "classyfire@query_namespace": "inchikey",
+  "classyfire@output_name": "classyfire_query.json",
+  "classyfire@load_ckp_file": "classyfire_query.json",
+  "classyfire@start_point": 0,
+  "pubchem@path": "",
+  "pubchem@query_column": "C@pubchem",
+  "pubchem@query_namespace": "cid",
+  "pubchem@output_name": "pubchem_query.json",
+  "pubchem@load_ckp_file": "pubchem_query.json",
+  "pubchem@start_point": 0,
+  "pubchem@properties": [
+    "molecular_formula",
+    "canonical_smiles",
+    "inchi",
+    "inchikey",
+    "exact_mass",
+    "IsomericSMILES",
+    "IUPACName"
+  ],
+  "db_format": [
+    "ID@db_id",
+    "ID@db_source",
+    "ID@submitter",
+    "ID@date",
+    "C@name",
+    "C@iupacname",
+    "C@formula",
+    "C@pubchem",
+    "C@chebi",
+    "C@kegg",
+    "C@cas",
+    "C@chemspider",
+    "C@kind",
+    "C@compound_superclass",
+    "C@compound_class",
+    "C@smiles",
+    "C@inchi",
+    "C@inchikey",
+    "C@exact_mass",
+    "CH@rt",
+    "CH@rt_second",
+    "CH@rt_no_unit",
+    "CH@column",
+    "CH@column_type",
+    "MS@instrument",
+    "MS@splash",
+    "CHECK@have_origin_inchi",
+    "CHECK@have_origin_smiles",
+    "CHECK@have_origin_db_id",
+    "CHECK@have_stereo_info"
+
+  ],
+
+  "massbank_format": {
+    "ACCESSION": null,
+    "RECORD_TITLE": null,
+    "DATE": null,
+    "AUTHORS": null,
+    "COPYRIGHT": null,
+    "CH$NAME": null,
+    "CH$COMPOUND_CLASS": null,
+    "CH$FORMULA": null,
+    "CH$EXACT_MASS": null,
+    "CH$SMILES": null,
+    "CH$IUPAC": null,
+    "CH$LINK": {
+      "CAS": null,
+      "INCHIKEY": null,
+      "CHEMSPIDER": null,
+      "COMPTOX": null,
+      "PUBCHEM": null,
+      "CHEBI": null,
+      "CHEMPDB": null,
+      "KEGG": null,
+      "NIKKAJI": null
+    },
+    "AC$INSTRUMENT": null,
+      "AC$INSTRUMENT_TYPE": null,
+    "AC$MASS_SPECTROMETRY": {
+      "MS_TYPE": null,
+      "ION_MODE": null,
+      "IONIZATION": null,
+      "FRAGMENTATION_MODE": null,
+      "COLLISION_ENERGY": null,
+      "RESOLUTION": null
+    },
+    "AC$CHROMATOGRAPHY": {
+      "COLUMN_NAME": null,
+      "FLOW_GRADIENT": null,
+      "FLOW_RATE": null,
+      "RETENTION_TIME": null,
+      "SOLVENT_A": null,
+      "SOLVENT_B": null
+    },
+    "MS$FOCUSED_ION": {
+      "BASE_PEAK": null,
+      "PRECURSOR_M/Z": null,
+      "PRECURSOR_TYPE": null
+    },
+    "PK$NUM_PEAK": null,
+    "PK$SPLASH": null,
+    "PK$PEAK": []
+  },
+  "massbank_basic_info": ["ACCESSION", "RECORD_TITLE","DATE", "AUTHORS", "COPYRIGHT", "CH$COMPOUND_CLASS","CH$NAME", "CH$FORMULA", "CH$SMILES","CH$EXACT_MASS", "CH$IUPAC","AC$INSTRUMENT","AC$INSTRUMENT_TYPE","PK$NUM_PEAK","PK$SPLASH"],
+"massbank_data": ["CH$LINK","AC$MASS_SPECTROMETRY","AC$CHROMATOGRAPHY","MS$FOCUSED_ION"]
+}
