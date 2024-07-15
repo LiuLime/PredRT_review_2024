@@ -7,7 +7,7 @@ import os
 import sys
 
 sys.path.append("..")
-sys.path.append("../02_collate_dataset/")
+sys.path.append("../collate_dataset/")
 import pandas as pd
 import numpy as np
 from rdkit import Chem

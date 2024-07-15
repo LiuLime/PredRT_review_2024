@@ -1,12 +1,12 @@
-"""Figure 1
-Fig.1A: Ratio of compound superclass in SMRT, MassBank, MoNA, PredRet datasets (LC records only)
-Fig.1B: Upset figure show intersections across datasets (LC records only)
+"""Figure 2
+Fig.2A: Ratio of compound superclass in SMRT, MassBank, MoNA, PredRet datasets (LC records only)
+Fig.2B: Upset figure show intersections across datasets (LC records only)
 
 output:
-    - save_path: './04_result/'
-    - Figure1A_pie.csv: statistical analysis result
-    - Figure1A_pie.png: ratio of compound superclass across datasets
-    - Figure1B_upset.png
+- save_path: './04_result/'
+- Figure2A_pie.csv: statistical analysis result
+- Figure2A_pie.png: ratio of compound superclass across datasets
+- Figure2B_upset.png
 
 @Liu 2023/12/21
 """

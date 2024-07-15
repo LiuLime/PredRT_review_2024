@@ -50,7 +50,7 @@ from urllib.parse import quote
 import json
 from bs4 import BeautifulSoup as BS
 
-sys.path.append("../02_collate_dataset")
+sys.path.append("../collate_dataset")
 
 
 class GenerateIdentifier:
