@@ -59,7 +59,7 @@ def process_dataset(dataset, save_path=None, filename=None, inst=None):
                                                index=True)
 
 
-data_path = "../02_collate_dataset/collate_data/"
+data_path = "../collate_dataset/collate_data/"
 save_path = "04_result/"
 dataset = ["01_SMRT_202309_LC.csv", "02_Massbank_202311.csv", "03_MoNA_202311.csv", "04_predret_202311.csv"]
 smrt, mbk, mona, predret = [read_file(dataset[i], data_path) for i in range(len(dataset))]

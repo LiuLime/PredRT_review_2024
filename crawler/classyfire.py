@@ -15,7 +15,7 @@ Parameter:
 
 import sys
 
-sys.path.append("../02_collate_dataset")
+sys.path.append("../collate_dataset")
 from utils import sendURL
 import pandas as pd
 import json
