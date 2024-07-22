@@ -31,22 +31,22 @@ For SMRT dataset:
 - if there are multiple duplicated isomer inchi presented, the record will be mared as 'True' in `Abnormal@indistinguishable_isomer` column;
 - if it is 'True' in `Abnormal@indistinguishable_isomer` column, inchi blasted result in pubchem will be filled in `Abnormal@indistinguishable_isomer_PubchemInChI` and `Abnormal@indistinguishable_isomer_IUAPCName` columns.
 ### Usage:
-1.please put dataframe for detection in `collate_dataset` folder
-Input Example: 
-file name: `SMRT.csv`,`predret.csv`
-file format example:
+1.please put dataframe for detection in `collate_dataset` folder    
+Input Example:     
+file name: `SMRT.csv`,`predret.csv`    
+file format example:    
 
 | ID@db_id | C@name | C@pubchem | C@chebi | C@kegg | C@cas | C@inchi                                         | C@inchikey                  | CH@rt | CH@rt_second | CH@rt_no_unit | MS@instrument | CHECK@have_origin_inchi | CHECK@have_origin_db_id |
 |----------|--------|-----------|---------|--------|-------|-------------------------------------------------|-----------------------------|-------|--------------|---------------|---------------|-------------------------|-------------------------|
 | SMRT_0   |        | 5139      |         |        |       | InChI=1S/C3H8N2S/c1-2-6-3(4)5/h2H2,1H3,(H3,4,5) | VFIZBHJTOHUOEK-UHFFFAOYSA-N | 93.5  | 93.5         |               | LC            | yes                     | yes                     |
 |          |        |           |         |        |       |                                                 |                             |       |              |               |               |                         |                         |
 
-running:
+running:    
 first time:
 ```shell
 python3 AbnormalDataDetector.py  
 ```
-running this if process was broke down before finish:
+running this if process was broke down before finish:    
 ```shell
 python3 AbnormalDataDetector.py  --load_ckp --load_file_name SMRT_check_temp.csv --start_point XX  # XX-> number for start rows
 ```
@@ -54,9 +54,9 @@ python3 AbnormalDataDetector.py  --load_ckp --load_file_name SMRT_check_temp.csv
 output:   `SMRT_check_temp.csv`,`predret_check_temp.csv` in `./AbnormalRecord/03_result/` path
 
 ## 3. Clean data analysis
-`_Filters.py`   
+`_Filters.py`       
 purpose: Filter data records by inchikey in collate dataframe, classify instrument type (GC or LC),
-and count unique compounds by inchikey)
+and count unique compounds by inchikey)    
 - screen out records with inchikey (records with valid molecular)
 - classify records by instrument type GC and LC
 - count unique compound records according to instrument type
@@ -65,16 +65,16 @@ and count unique compounds by inchikey)
 `Sorter.py`:    
 Input: same dataframe format as mentioned above. Records with valid `C@inchikey` will be selected to processs here.  
 Output: Table 1,2,3,4   
-Count RT records in SMRT, MassBank, MoNA and Predret datasets
-- Screen out records with inchikey (exclude records with invalid identifier) [_Filters.py]
-  - classify RT records into RT records with unit(min or sec) or no unity fill in two columns "CH@rt_second", "CH@rt_no_unit" 
+Count RT records in SMRT, MassBank, MoNA and Predret datasets    
+- Screen out records with inchikey (exclude records with invalid identifier) [_Filters.py]    
+- classify RT records into RT records with unit(min or sec) or no unity fill in two columns "CH@rt_second", "CH@rt_no_unit" 
     Notice: min was transformed into sec by multiplying 60
     [_Filters.py]
 - classify records into LC (liquid-chromatography) and GC(gas-chromatography) instrument type, summarize records individually.
   [_Filters.py]
 
 output files:
---------------
+--------------    
 - save_path: './04_result/'
 - 01_SMRT_LC.csv: final clean data with valid inchi and inchikey
 - 02_MBK_LC.csv, 03_MoNA_LC.csv, 04_predret_LC:
@@ -87,30 +87,30 @@ output files:
   Summary of Massbank data source, number of compounds, number of unique compounds using GC instrument type
 
 Notice
-----------
+----------    
 If origin records provide indistinguishable inchi for isormers, then their inchi and inchikey will be the same in cleaned data,
 please keep this point in mind.
 
-Usage:
+Usage:    
 ```shell
 python3 Sorter.py  
 ```
 
-`ChemDraw.py`:  
+`ChemDraw.py`:      
 Purpose:    
 Fig.2A: Ratio of compound superclass in SMRT, MassBank, MoNA, PredRet datasets (LC records only).   
-Fig.2B: Upset figure show intersections across datasets (LC records only).
+Fig.2B: Upset figure show intersections across datasets (LC records only).    
 
 input:    
-Please conduct  `Sorter.py` first, this script will utilize the output dataframe saved by `Sorter.py`.
+Please conduct  `Sorter.py` first, this script will utilize the output dataframe saved by `Sorter.py`.    
 
-output:
+output:    
 - save_path: './04_result/'
 - Figure2A_pie.csv: statistical analysis result
 - Figure2A_pie.png: ratio of compound superclass across datasets
 - Figure2B_upset.png
 
-Usage:
+Usage:    
 ```shell
 python3 ChemDraw.py  
 ```
