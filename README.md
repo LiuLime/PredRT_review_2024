@@ -25,7 +25,7 @@ For predret dataset:
 - if they are not match firstly, but could match after removing stereo information, they will be marked as `inconsistent_stereoconformation: orgin_inchi&database_inchi` in output dataframe in `Abnormal@inconsistent_type` column;
 - if they are not match even after removing stereo informatino, they will be marked as `inconsistent_object: orgin_inchi&database_inchi` in `Abnormal@inconsistent_type` column;
 - The orgin inchi and database identifier searched inchi will be filled in `Abnormal@inconsistent_type_origin_inchi` and `Abnormal@inconsistent_type_database_inchi` columns relatively;
-- if inchi id could not be transformed into `molecular` object by rdkit tool, they will be marked as `invalid inchi to molecular` in `Abnormal@invalid_molecular` column.
+- if inchi id could not be transformed into `molecular` object by rdkit tool, they will be marked as `invalid inchi to molecular` in `Abnormal@invalid_molecular` column.    
 For SMRT dataset:
 - if inchi id could not be transformed into `molecular` object by rdkit tool, they will be marked as `invalid inchi to molecular` in `Abnormal@invalid_molecular` column;
 - if there are multiple duplicated isomer inchi presented, the record will be mared as 'True' in `Abnormal@indistinguishable_isomer` column;
